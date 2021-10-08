@@ -6,6 +6,7 @@ var logger = require('morgan');
 var baseRouter = require('./routes/base');
 var collectionsRouter = require('./routes/collections');
 var documentsRouter = require('./routes/documents');
+var navigationRouter = require('./routes/navigation');
 
 
 var app = express();
@@ -19,5 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dts/api', baseRouter);
 app.use('/dts/api/collections', collectionsRouter);
 app.use('/dts/api/documents', documentsRouter);
+app.use('/dts/api/navigation', navigationRouter)
 
 module.exports = app;
